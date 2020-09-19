@@ -14,13 +14,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         findViewById<TextView>(R.id.txtTitle).text = recipie.name
-        findViewById<TextView>(R.id.txtIngredientsList).text = getIngredientsContent().toString()
+        findViewById<TextView>(R.id.txtIngredientsList).text = getIngredientsContent()
         findViewById<TextView>(R.id.txtStepsList).text = getStepsContent()
     }
 
     private fun getIngredientsContent() = recipie.ingredients.map {
         "${it.quantity} ${it.name}\n"
-    }
+    }.toString()
 
     private fun getStepsContent() = recipie.steps
         .sortedBy { it.order }
