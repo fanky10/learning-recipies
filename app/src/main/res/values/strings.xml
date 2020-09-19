@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Recipies</string>
+    <string name="ingredients_sub_header">Ingredientes</string>
+    <string name="steps_sub_header">Steps</string>
 </resources>
