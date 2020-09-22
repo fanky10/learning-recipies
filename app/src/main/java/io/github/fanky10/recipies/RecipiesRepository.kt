@@ -1,12 +1,12 @@
 package io.github.fanky10.recipies
 
 import io.github.fanky10.recipies.domain.Ingredient
-import io.github.fanky10.recipies.domain.Recipie
+import io.github.fanky10.recipies.domain.Recipe
 import io.github.fanky10.recipies.domain.Step
 
 object RecipiesRepository {
     // from: https://cookpad.com/eeuu/recetas/5999222-chuletas-de-cerdo-con-papas-y-romero-al-horno
-    fun get() = Recipie(
+    fun get() = Recipe(
         "Chuletas de cerdo con papas y romero al horno",
         listOf(
             Ingredient("chuletas de cerdo", "4"),
