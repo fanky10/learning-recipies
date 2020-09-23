@@ -21,8 +21,7 @@ class EditRecipeActivity : AppCompatActivity() {
     }
 
     private fun save() {
-        val name = findViewById<EditText>(R.id.etName).text.toString()
-        RecipiesRepository.saveName(name)
+        RecipiesRepository.saveName(findViewById<EditText>(R.id.etName).text.toString())
         finish()
     }
 }
