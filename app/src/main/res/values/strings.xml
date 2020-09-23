@@ -2,4 +2,7 @@
     <string name="app_name">Recipies</string>
     <string name="ingredients_sub_header">Ingredientes</string>
     <string name="steps_sub_header">Pasos</string>
+    <string name="etName">Nombre</string>
+    <string name="btnEdit">Editar</string>
+    <string name="btnSave">Guardar cambios</string>
 </resources>
