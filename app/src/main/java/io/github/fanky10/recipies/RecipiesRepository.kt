@@ -39,12 +39,4 @@ object RecipiesRepository {
             recipe.steps
         )
     }
-
-    fun saveIngredient(ingredient: Ingredient) {
-        recipe = Recipe(
-            recipe.name,
-            listOf(ingredient),
-            recipe.steps
-        )
-    }
 }
