@@ -1,6 +1,8 @@
 package io.github.fanky10.recipies
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import io.github.fanky10.recipies.domain.Recipe
@@ -16,6 +18,13 @@ class MainActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.txtTitle).text = recipe.name
         findViewById<TextView>(R.id.txtIngredientsList).text = getIngredientsContent()
         findViewById<TextView>(R.id.txtStepsList).text = getStepsContent()
+        findViewById<Button>(R.id.btnEdit).setOnClickListener {
+            editRecipe()
+        }
+    }
+
+    private fun editRecipe() {
+        startActivity(Intent(this, EditRecipeActivity::class.java))
     }
 
     private fun getIngredientsContent() = recipe.ingredients.map {
