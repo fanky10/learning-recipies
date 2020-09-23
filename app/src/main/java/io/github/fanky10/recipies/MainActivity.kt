@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import io.github.fanky10.recipies.domain.Recipe
 
@@ -15,12 +16,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        findViewById<TextView>(R.id.txtTitle).text = recipe.name
         findViewById<TextView>(R.id.txtIngredientsList).text = getIngredientsContent()
         findViewById<TextView>(R.id.txtStepsList).text = getStepsContent()
         findViewById<Button>(R.id.btnEdit).setOnClickListener {
             editRecipe()
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        findViewById<TextView>(R.id.txtTitle).text = recipe.name
     }
 
     private fun editRecipe() {
