@@ -6,7 +6,7 @@ import io.github.fanky10.recipies.domain.Step
 
 object RecipiesRepository {
     // from: https://cookpad.com/eeuu/recetas/5999222-chuletas-de-cerdo-con-papas-y-romero-al-horno
-    fun get() = Recipe(
+    private var recipe: Recipe = Recipe(
         "Chuletas de cerdo con papas y romero al horno",
         listOf(
             Ingredient("chuletas de cerdo", "4"),
@@ -29,4 +29,14 @@ object RecipiesRepository {
             )
         )
     )
+
+    fun get() = recipe
+
+    fun saveName(name: String) {
+        recipe = Recipe(
+            name,
+            recipe.ingredients,
+            recipe.steps
+        )
+    }
 }
