@@ -32,6 +32,10 @@ object RecipiesRepository {
 
     fun get() = recipe
 
+    fun add() {
+        // boludeces para despues
+    }
+
     fun saveName(name: String) {
         recipe = Recipe(
             name,
