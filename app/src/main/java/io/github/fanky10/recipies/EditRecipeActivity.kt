@@ -28,6 +28,7 @@ class EditRecipeActivity : AppCompatActivity() {
     }
 
     private fun save() {
+        val name: String = findViewById<EditText>(R.id.etName).text.toString()
         val ing1: String = findViewById<EditText>(R.id.etIng1).text.toString()
         val ingQuantity: String = findViewById<EditText>(R.id.etIng1Quantity).text.toString()
         val step1: String = findViewById<EditText>(R.id.etStep1).text.toString()
@@ -35,7 +36,7 @@ class EditRecipeActivity : AppCompatActivity() {
         val ingredient1 = Ingredient(ing1, ingQuantity)
         val stepNumber1 = Step(1, step1)
 
-        RecipiesRepository.saveAll(findViewById<EditText>(R.id.etName).text.toString(), ingredient1, stepNumber1)
+        RecipiesRepository.saveAll(name , ingredient1, stepNumber1)
         finish()
     }
 }
