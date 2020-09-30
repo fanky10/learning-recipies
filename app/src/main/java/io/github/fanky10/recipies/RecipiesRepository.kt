@@ -6,9 +6,9 @@ import io.github.fanky10.recipies.domain.Step
 
 object RecipiesRepository {
     // from: https://cookpad.com/eeuu/recetas/5999222-chuletas-de-cerdo-con-papas-y-romero-al-horno
-    private var recipe: Recipe = Recipe(
+    private var recipeChops: Recipe = Recipe(
             "Chuletas de cerdo con papas y romero al horno",
-            mutableListOf(
+            listOf(
                     Ingredient("chuletas de cerdo", "4"),
                     Ingredient("papas", "2"),
                     Ingredient("cebolla", "1"),
@@ -17,7 +17,7 @@ object RecipiesRepository {
                     Ingredient("salsa de soja", "1 chorrito"),
                     Ingredient("aceite de oliva", "1 chorrito")
             ),
-            mutableListOf(
+            listOf(
                     Step(
                             1, "Precalentar el horno. En un bol marinar las chuletas con la sal, pimienta, ajo en polvo, la mitad del romero, aceite de oliva y la salsa de soja"
                     ),
@@ -30,14 +30,37 @@ object RecipiesRepository {
             )
     )
 
-    fun get() = recipe
+    private var recipeChoco: Recipe = Recipe(
+            "Choco caliente",
+            listOf(
+                    Ingredient("Chocolate Nesquick™", "2 cucharadas"),
+                    Ingredient("Leche", "200ml"),
+                    Ingredient("Azúcar", "A gusto")
+            ),
+            listOf(
+                    Step(
+                            1, "Colocar la leche en un recipiente y calentar a gusto."
+                    ),
+                    Step(
+                            2, "En una taza, agregar 2 cucharadas de chocolate Nesquick™."
+                    ),
+                    Step(
+                            3, "Cuando la leche esté caliente, ir vertiendo con cuidado mientras se mezcla evitando grumos."
+                    ),
+                    Step(
+                            4, "Colocar azúcar si se desea."
+                            )
+            )
+    )
+
+    fun get() = recipeChops
 
     fun saveAll(name: String, ing: Ingredient, step: Step) {
-        recipe = Recipe(name,
-                recipe.ingredients,
-                recipe.steps
+        recipeChops = Recipe(name,
+                recipeChops.ingredients,
+                recipeChops.steps
         )
-        recipe.ingredients[0] = ing
-        recipe.steps[0] = step
+        recipeChops.ingredients.toMutableList()[0] = ing
+        recipeChops.steps.toMutableList()[0] = step
     }
 }

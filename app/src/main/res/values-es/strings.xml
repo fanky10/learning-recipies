@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Recetas</string>
+    <string name="ingredients_sub_header">Ingredientes</string>
+    <string name="steps_sub_header">Pasos</string>
+    <string name="etName">Nombre</string>
+    <string name="etIng1">Ingrediente 1</string>
+    <string name="etIng1Quantity">Cantidad</string>
+    <string name="etStep1">Paso 1</string>
+    <string name="btnEdit">Editar</string>
+    <string name="btnSave">Guardar cambios</string>
+    <string name="btnChop">Chuletas</string>
+    <string name="btnChoco">Choco</string>
+    <string name="btnTBD">TBD</string>
+</resources>

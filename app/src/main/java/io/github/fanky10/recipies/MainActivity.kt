@@ -17,6 +17,19 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.btnEdit).setOnClickListener {
             editRecipe()
         }
+
+        findViewById<Button>(R.id.btnChop).setOnClickListener {
+
+        }
+
+        findViewById<Button>(R.id.btnChoco).setOnClickListener {
+
+        }
+
+        findViewById<Button>(R.id.btnTBD).setOnClickListener {
+
+        }
+
     }
 
     override fun onResume() {
