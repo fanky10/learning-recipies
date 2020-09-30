@@ -19,14 +19,44 @@ class MainActivity : AppCompatActivity() {
         }
 
         findViewById<Button>(R.id.btnChop).setOnClickListener {
+            RecipiesRepository.setRecipe(0)
+
+            val recipe = RecipiesRepository.get()
+            findViewById<TextView>(R.id.txtTitle).text = recipe.name
+            findViewById<TextView>(R.id.txtIngredientsList).text = getIngredientsContent(
+                    recipe
+            )
+            findViewById<TextView>(R.id.txtStepsList).text = getStepsContent(
+                    recipe
+            )
 
         }
 
         findViewById<Button>(R.id.btnChoco).setOnClickListener {
+            RecipiesRepository.setRecipe(1)
+
+            val recipe = RecipiesRepository.get()
+            findViewById<TextView>(R.id.txtTitle).text = recipe.name
+            findViewById<TextView>(R.id.txtIngredientsList).text = getIngredientsContent(
+                    recipe
+            )
+            findViewById<TextView>(R.id.txtStepsList).text = getStepsContent(
+                    recipe
+            )
 
         }
 
         findViewById<Button>(R.id.btnTBD).setOnClickListener {
+            RecipiesRepository.setRecipe(2)
+
+            val recipe = RecipiesRepository.get()
+            findViewById<TextView>(R.id.txtTitle).text = recipe.name
+            findViewById<TextView>(R.id.txtIngredientsList).text = getIngredientsContent(
+                    recipe
+            )
+            findViewById<TextView>(R.id.txtStepsList).text = getStepsContent(
+                    recipe
+            )
 
         }
 
