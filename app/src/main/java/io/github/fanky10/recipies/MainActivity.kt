@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
 
         selectedRecipeIndex = intent.extras?.getInt("SELECTED_RECIPE_IDX") ?: 0
         Log.d("fanky10", "selected index: $selectedRecipeIndex")
+
         // only UI binding on view information created
         findViewById<Button>(R.id.btnEdit).setOnClickListener {
             editRecipe()
@@ -33,39 +34,6 @@ class MainActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.txtStepsList).text = getStepsContent(
             recipe
         )
-
-//        findViewById<Button>(R.id.btnChop).setOnClickListener {
-//
-//
-//        }
-//
-//        findViewById<Button>(R.id.btnChoco).setOnClickListener {
-//            RecipiesRepository.setRecipe(1)
-//
-//            val recipe = RecipiesRepository.get()
-//            findViewById<TextView>(R.id.txtTitle).text = recipe.name
-//            findViewById<TextView>(R.id.txtIngredientsList).text = getIngredientsContent(
-//                    recipe
-//            )
-//            findViewById<TextView>(R.id.txtStepsList).text = getStepsContent(
-//                    recipe
-//            )
-//
-//        }
-//
-//        findViewById<Button>(R.id.btnTBD).setOnClickListener {
-//            RecipiesRepository.setRecipe(2)
-//
-//            val recipe = RecipiesRepository.get()
-//            findViewById<TextView>(R.id.txtTitle).text = recipe.name
-//            findViewById<TextView>(R.id.txtIngredientsList).text = getIngredientsContent(
-//                    recipe
-//            )
-//            findViewById<TextView>(R.id.txtStepsList).text = getStepsContent(
-//                    recipe
-//            )
-//
-//        }
 
     }
 
