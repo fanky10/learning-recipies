@@ -7,7 +7,7 @@ import io.github.fanky10.recipies.domain.Step
 object RecipiesRepository {
     // from: https://cookpad.com/eeuu/recetas/5999222-chuletas-de-cerdo-con-papas-y-romero-al-horno
     private var n: Int = 0
-    private var recipes = mutableListOf(
+    var recipes = mutableListOf(
             Recipe(
             "Chuletas de cerdo con papas y romero al horno",
             listOf(
@@ -92,4 +92,10 @@ object RecipiesRepository {
         recipes[n].ingredients.toMutableList()[0] = ing
         recipes[n].steps.toMutableList()[0] = step
     }
+
+    fun getRecipesNames() : List<String> = listOf(
+        "Chuletas de cerdo con papas y romero al horno",
+        "Choco caliente",
+        "Tamagoyaki"
+    )
 }
