@@ -34,9 +34,8 @@ class RecipesListActivity : ListActivity() {
         override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
             val textString = getItem(position)
             val newView: View = convertView ?: LayoutInflater.from(context).inflate(R.layout.recipe_item_list, parent, false)
-            newView.findViewById<TextView>(R.id.textView).text = "Position: $position"
+            newView.findViewById<TextView>(R.id.listTittle).text = textString
             val button = newView.findViewById<Button>(R.id.btn_recipe)
-            button.text = textString
             button.setOnClickListener {
                 openRecipeDetail(position)
             }
