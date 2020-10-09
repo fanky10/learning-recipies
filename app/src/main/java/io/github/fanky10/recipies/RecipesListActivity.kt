@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.TextView
+import io.github.fanky10.recipies.domain.Recipe
 
 
 class RecipesListActivity : ListActivity() {
@@ -27,14 +28,14 @@ class RecipesListActivity : ListActivity() {
         startActivity(intent)
     }
 
-    inner class RecipesAdapter : ArrayAdapter<String> {
+    inner class RecipesAdapter : ArrayAdapter<Recipe> {
 
-        constructor(ctx: Context) : super(ctx, 0, RecipiesRepository.getRecipesNames())
+        constructor(ctx: Context) : super(ctx, 0, RecipiesRepository.recipes)
 
         override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
-            val textString = getItem(position)
+            val recipe = getItem(position)
             val newView: View = convertView ?: LayoutInflater.from(context).inflate(R.layout.recipe_item_list, parent, false)
-            newView.findViewById<TextView>(R.id.listTittle).text = textString
+            newView.findViewById<TextView>(R.id.listTittle).text = recipe?.name
             val button = newView.findViewById<Button>(R.id.btn_recipe)
             button.setOnClickListener {
                 openRecipeDetail(position)
