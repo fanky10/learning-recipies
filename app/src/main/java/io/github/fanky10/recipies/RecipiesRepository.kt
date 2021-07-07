@@ -6,9 +6,11 @@ import io.github.fanky10.recipies.domain.Step
 
 object RecipiesRepository {
     // from: https://cookpad.com/eeuu/recetas/5999222-chuletas-de-cerdo-con-papas-y-romero-al-horno
-    private var recipe: Recipe = Recipe(
+    private var n: Int = 0
+    var recipes = mutableListOf(
+            Recipe(
             "Chuletas de cerdo con papas y romero al horno",
-            mutableListOf(
+            listOf(
                     Ingredient("chuletas de cerdo", "4"),
                     Ingredient("papas", "2"),
                     Ingredient("cebolla", "1"),
@@ -17,7 +19,7 @@ object RecipiesRepository {
                     Ingredient("salsa de soja", "1 chorrito"),
                     Ingredient("aceite de oliva", "1 chorrito")
             ),
-            mutableListOf(
+            listOf(
                     Step(
                             1, "Precalentar el horno. En un bol marinar las chuletas con la sal, pimienta, ajo en polvo, la mitad del romero, aceite de oliva y la salsa de soja"
                     ),
@@ -28,16 +30,72 @@ object RecipiesRepository {
                             3, "Añadir las chuletas encima de las papas y llevar al horno a fuego medio. A media cocción (aprox unos 15 min) sacar y dar vuelta a las chuletas y dejar 15 min más"
                     )
             )
+    ),
+            Recipe(
+            "Choco caliente",
+            listOf(
+                    Ingredient("Chocolate Nesquick™", "2 cucharadas"),
+                    Ingredient("Leche", "200ml"),
+                    Ingredient("Azúcar", "A gusto")
+            ),
+            listOf(
+                    Step(
+                            1, "Colocar la leche en un recipiente y calentar a gusto."
+                    ),
+                    Step(
+                            2, "En una taza, agregar 2 cucharadas de chocolate Nesquick™."
+                    ),
+                    Step(
+                            3, "Cuando la leche esté caliente, ir vertiendo con cuidado mientras se mezcla evitando grumos."
+                    ),
+                    Step(
+                            4, "Colocar azúcar si se desea."
+                            )
+            )
+    ),
+            Recipe(
+                    "Tamagoyaki",
+            listOf(
+                    Ingredient("Huevos", "2"),
+                    Ingredient("Salsa de soja", "Un chorrito"),
+                    Ingredient("Azúcar", "A gusto"),
+                    Ingredient("Aceite", "Un chorrito")
+            ),
+            listOf(
+                    Step(
+                            1, "Romper y colocar los 2 huevos en un recipiente."
+                    ),
+                    Step(
+                            2, "Agregar azúcar a gusto y mezclar bien."
+                    ),
+                    Step(
+                            3, "Echar un chorrito de salsa de soja y terminar de mezclar"
+                    ),
+                    Step(
+                            4, "Colocar aceite en un sartén y cocinar la mezcla."
+                    )
+            )
+    )
     )
 
-    fun get() = recipe
+    fun setRecipe(r: Int) {
+        n = r
+    }
+
+    fun get() = recipes[n]
 
     fun saveAll(name: String, ing: Ingredient, step: Step) {
-        recipe = Recipe(name,
-                recipe.ingredients,
-                recipe.steps
+        recipes[n] = Recipe(name,
+                recipes[n].ingredients,
+                recipes[n].steps
         )
-        recipe.ingredients[0] = ing
-        recipe.steps[0] = step
+        recipes[n].ingredients.toMutableList()[0] = ing
+        recipes[n].steps.toMutableList()[0] = step
     }
+
+    fun getRecipesNames() : List<String> = listOf(
+        "Chuletas de cerdo con papas y romero al horno",
+        "Choco caliente",
+        "Tamagoyaki"
+    )
 }
